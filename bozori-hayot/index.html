@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="tg">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Бозори Ҳаёт | Дӯкони онлайнии техника барои Тоҷикистон</title>
+  <meta name="description" content="Бозори Ҳаёт — намунаи дӯкони онлайнии муосир барои Тоҷикистон бо HTML, CSS ва JavaScript." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="site-shell" id="top">
+    <header class="header">
+      <div class="header-top container">
+        <a class="brand" href="#top" aria-label="Саҳифаи асосии Бозори Ҳаёт">
+          <div class="brand-mark">БҲ</div>
+          <div class="brand-copy">
+            <strong>Бозори Ҳаёт</strong>
+            <span>техника барои ҳар рӯз</span>
+          </div>
+        </a>
+
+        <button class="location-pill" type="button">
+          <span class="location-icon">📍</span>
+          <span>
+            <small>Расондан ба</small>
+            <strong>Душанбе</strong>
+          </span>
+        </button>
+
+        <form class="searchbar" id="searchForm">
+          <label class="sr-only" for="searchInput">Ҷустуҷӯи мол</label>
+          <select id="categorySelect" aria-label="Интихоби категория">
+            <option value="all">Ҳамаи бахшҳо</option>
+          </select>
+          <input id="searchInput" type="search" placeholder="Масалан: телефон, ноутбук, гӯшмонак..." autocomplete="off" />
+          <button type="submit" aria-label="Ҷустуҷӯ">🔎</button>
+        </form>
+
+        <nav class="account-nav">
+          <button class="nav-pill" type="button">
+            <small>Салом, меҳмон</small>
+            <strong>Ҳисоб ва дӯстдоштаҳо</strong>
+          </button>
+          <button class="nav-pill" type="button">
+            <small>Фармоишҳо</small>
+            <strong>Пайгирӣ ва бозгашт</strong>
+          </button>
+          <button class="cart-button" id="cartButton" type="button" aria-label="Кушодани сабад">
+            <span class="cart-count" id="cartCount">0</span>
+            <span class="cart-icon">🛒</span>
+            <strong>Сабад</strong>
+          </button>
+        </nav>
+      </div>
+
+      <div class="header-subnav">
+        <div class="container subnav-inner">
+          <button class="menu-pill" type="button">☰ Бахшҳо</button>
+          <div class="subnav-links" id="subnavLinks"></div>
+          <div class="subnav-promo">Имрӯз: расондан дар Душанбе ва атрофаш аз 25 сомонӣ</div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <span class="eyebrow">Пешниҳоди нав барои хона ва кор</span>
+            <h1>Техникаи замонавӣ бо сабки наздик ба харидори тоҷик.</h1>
+            <p>
+              Интерфейс, матн ва пешниҳодҳо барои бозори Тоҷикистон мутобиқ карда шуданд:
+              нархҳо бо сомонӣ, расондан ба шаҳрҳои асосӣ, пардохти нақдӣ ё кортӣ,
+              кафолати равшан ва интихоби дастгоҳҳое, ки мардум бештар меҷӯянд.
+            </p>
+            <div class="hero-actions">
+              <a href="#catalog" class="btn btn-primary">Дидани молҳои машҳур</a>
+              <a href="#services" class="btn btn-secondary">Хизматрасониҳо</a>
+            </div>
+            <div class="hero-stats">
+              <div><strong>24</strong><span>моли интихобшуда</span></div>
+              <div><strong>6</strong><span>бахши асосӣ</span></div>
+              <div><strong>4.8/5</strong><span>баҳои миёна</span></div>
+            </div>
+          </div>
+
+          <div class="hero-panels">
+            <article class="hero-card featured-card">
+              <span class="label hot">Интихоби рӯз</span>
+              <h3 id="featuredTitle">Моли тавсияшуда</h3>
+              <p id="featuredText">Суръати хуб, батареяи дароз ва арзиши муносиб барои истифодаи ҳаррӯза.</p>
+              <div class="featured-meta">
+                <span id="featuredPrice">0 с.</span>
+                <button class="btn btn-accent" id="featuredAdd">Ба сабад</button>
+              </div>
+            </article>
+            <div class="mini-grid">
+              <article class="hero-card mini-card">
+                <span class="label">Расондани зуд</span>
+                <h4>Душанбе, Хуҷанд, Бохтар</h4>
+                <p>Барои бисёр молҳо супориш дар ҳамон рӯз омода мешавад.</p>
+              </article>
+              <article class="hero-card mini-card">
+                <span class="label">Боварии бештар</span>
+                <h4>Санҷиш пеш аз қабул</h4>
+                <p>Барои харидор имкони санҷиши зоҳирӣ ва ҳолати мол пешбинӣ шудааст.</p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="promo-strip container" id="deals">
+        <article>
+          <span>Пешниҳоди оилавӣ</span>
+          <strong>Смартфонҳо барои ҳар рӯз</strong>
+          <p>Барои донишҷӯ, кор, хона ва муоширати доимӣ.</p>
+        </article>
+        <article>
+          <span>Барои идора ва таҳсил</span>
+          <strong>Ноутбукҳои сабук ва боэътимод</strong>
+          <p>Муносиб барои Zoom, Word, Excel ва таҳсилоти фосилавӣ.</p>
+        </article>
+        <article>
+          <span>Тӯҳфаи муносиб</span>
+          <strong>Соат ва гӯшмонак</strong>
+          <p>Молҳои машҳур барои зодрӯз, ид ва армуғон.</p>
+        </article>
+      </section>
+
+      <section class="services container" id="services">
+        <article class="service-card">
+          <div class="service-icon">💳</div>
+          <h3>Пардохти қулай</h3>
+          <p>Нақдӣ ҳангоми қабул, кортҳои бонкӣ ва интиқоли онлайн.</p>
+        </article>
+        <article class="service-card">
+          <div class="service-icon">🛡️</div>
+          <h3>Кафолати фаҳмо</h3>
+          <p>Шартҳои содда барои иваз ё муроҷиат ба хизматрасонӣ.</p>
+        </article>
+        <article class="service-card">
+          <div class="service-icon">📦</div>
+          <h3>Гирифтани мустақил</h3>
+          <p>Имкони гирифтани фармоиш аз нуқтаи супориш дар шаҳр.</p>
+        </article>
+        <article class="service-card">
+          <div class="service-icon">☎️</div>
+          <h3>Машварати тоҷикӣ</h3>
+          <p>Кӯмак барои интихоби мол ба забони тоҷикӣ ва русӣ.</p>
+        </article>
+      </section>
+
+      <section class="market-row container">
+        <article class="deal-banner tajik-banner">
+          <div>
+            <span class="eyebrow subtle">Рангҳои гарм ва эътимодбахш</span>
+            <h2>Сабк барои бозори маҳаллӣ</h2>
+            <p>Палитра бо ҳисси гармӣ, покизагӣ ва эътимод сохта шудааст, то ба фазои тиҷорати муосири Тоҷикистон наздик бошад.</p>
+          </div>
+        </article>
+        <article class="deal-banner family-banner">
+          <div>
+            <span class="eyebrow subtle">Интихоб барои хона</span>
+            <h2>Молҳои серталаб барои зиндагии ҳаррӯза</h2>
+            <p>Телефон, ноутбук, планшет ва лавозимот барои кор, таҳсил ва робитаи оилавӣ.</p>
+          </div>
+        </article>
+      </section>
+
+      <section class="catalog-section container" id="catalog">
+        <aside class="filters-panel panel">
+          <div class="panel-head">
+            <h2>Филтрҳо</h2>
+            <button id="resetFilters" type="button">Пок кардан</button>
+          </div>
+
+          <div class="filter-group">
+            <h3>Категория</h3>
+            <div class="chip-list" id="categoryChips"></div>
+          </div>
+
+          <div class="filter-group">
+            <h3>Бренд</h3>
+            <div class="chip-list" id="brandChips"></div>
+          </div>
+
+          <div class="filter-group">
+            <h3>Диапазони нарх</h3>
+            <label for="priceRange" class="range-label">
+              То <strong id="priceRangeValue">20000</strong> сомонӣ
+            </label>
+            <input id="priceRange" type="range" min="500" max="20000" step="100" value="20000" />
+          </div>
+
+          <div class="filter-group">
+            <h3>Талаботи харидорон</h3>
+            <label class="toggle-row">
+              <input type="checkbox" id="inStockOnly" />
+              <span>Фақат молҳои дастрас</span>
+            </label>
+            <label class="toggle-row">
+              <input type="checkbox" id="discountOnly" />
+              <span>Фақат бо тахфиф</span>
+            </label>
+            <label class="toggle-row">
+              <input type="checkbox" id="highRatedOnly" />
+              <span>Баҳои 4.5 ва бештар</span>
+            </label>
+          </div>
+        </aside>
+
+        <div class="catalog-main">
+          <div class="catalog-toolbar panel">
+            <div>
+              <span class="eyebrow subtle">Каталоги асосӣ</span>
+              <h2>Молҳои тавсияшуда барои Тоҷикистон</h2>
+              <p id="resultsText">24 мол ёфт шуд</p>
+            </div>
+            <div class="toolbar-actions">
+              <label class="sort-field">
+                <span>Тартиб</span>
+                <select id="sortSelect">
+                  <option value="featured">Тавсияшуда</option>
+                  <option value="price-asc">Арзон ба қимат</option>
+                  <option value="price-desc">Қимат ба арзон</option>
+                  <option value="rating-desc">Баҳои баланд</option>
+                  <option value="discount-desc">Тахфифи бештар</option>
+                </select>
+              </label>
+            </div>
+          </div>
+
+          <div class="product-grid" id="productGrid"></div>
+        </div>
+      </section>
+
+      <section class="insight-section container">
+        <article class="panel insight-card">
+          <span class="eyebrow subtle">Чаро ин версия мувофиқтар аст?</span>
+          <h2>Мутобиқсозии тарроҳӣ ба муҳити Тоҷикистон</h2>
+          <ul class="insight-list">
+            <li>Матнҳои интерфейс ба забони тоҷикӣ навишта шуданд.</li>
+            <li>Нархҳо бо сомонӣ нишон дода мешаванд.</li>
+            <li>Шаҳрҳо ва тарзҳои қабул ба одатҳои маҳаллӣ наздик карда шуданд.</li>
+            <li>Фазои визуалӣ гармтар ва барои харидори оилавӣ эътимодбахштар шуд.</li>
+          </ul>
+        </article>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-grid">
+        <div>
+          <strong>Бозори Ҳаёт</strong>
+          <p>Намунаи вебсаҳифаи муосир барои дӯкони техника дар Тоҷикистон.</p>
+        </div>
+        <div>
+          <strong>Шаҳрҳои хизматрасонӣ</strong>
+          <p>Душанбе • Хуҷанд • Бохтар • Кӯлоб • Турсунзода</p>
+        </div>
+        <div>
+          <strong>Пардохт</strong>
+          <p>Нақдӣ • Корт • Интиқол • Пардохт ҳангоми қабул</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <aside class="cart-drawer" id="cartDrawer" aria-hidden="true">
+    <div class="cart-backdrop" id="cartBackdrop"></div>
+    <div class="cart-panel">
+      <div class="cart-head">
+        <h2>Сабади шумо</h2>
+        <button id="closeCart" type="button" aria-label="Пӯшидани сабад">✕</button>
+      </div>
+      <div class="cart-items" id="cartItems"></div>
+      <div class="cart-foot">
+        <div class="cart-total">
+          <span>Ҷамъ:</span>
+          <strong id="cartTotal">0 с.</strong>
+        </div>
+        <button class="btn btn-primary btn-block" type="button">Идомаи фармоиш</button>
+        <p class="cart-note">Нархҳо намунавӣ мебошанд. Ин версия барои намоиши тарроҳӣ сохта шудааст.</p>
+      </div>
+    </div>
+  </aside>
+
+  <template id="productCardTemplate">
+    <article class="product-card">
+      <div class="product-media">
+        <span class="discount-badge"></span>
+        <div class="product-visual"></div>
+      </div>
+      <div class="product-body">
+        <div class="product-meta">
+          <span class="product-brand"></span>
+          <span class="product-rating"></span>
+        </div>
+        <h3 class="product-title"></h3>
+        <p class="product-description"></p>
+        <div class="product-price-row">
+          <div>
+            <strong class="product-price"></strong>
+            <span class="product-old-price"></span>
+          </div>
+          <span class="product-stock"></span>
+        </div>
+        <button class="btn btn-primary btn-block add-to-cart" type="button">Ба сабад</button>
+      </div>
+    </article>
+  </template>
+
+  <script src="script.js"></script>
+</body>
+</html>
